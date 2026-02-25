@@ -1,0 +1,74 @@
+simulation:
+  duration_minutes: 10
+  sampling_rate: 50
+
+output:
+  data_dir: data
+  images_dir: images
+  reports_dir: reports
+
+assessment:
+  thresholds:
+    hard_accel: 2.5
+    hard_brake: -2.5
+    moderate_accel: 1.5
+    moderate_brake: -1.5
+    sharp_turn: 2.0
+    moderate_turn: 1.2
+    high_gforce: 1.3
+    moderate_gforce: 1.15
+    high_yaw_rate: 0.5
+    smoothness_threshold: 0.3
+
+  weights:
+    hard_events: 0.30
+    moderate_events: 0.15
+    gforce: 0.20
+    smoothness: 0.20
+    overall_intensity: 0.15
+
+profiles:
+  normal:
+    accel_mean: 0.0
+    accel_std: 0.3
+    accel_max: 0.5
+    brake_intensity: 0.4
+    turn_intensity: 0.3
+    smoothness: 0.8
+    event_frequency: 0.02
+
+  aggressive:
+    accel_mean: 0.1
+    accel_std: 0.6
+    accel_max: 0.9
+    brake_intensity: 0.8
+    turn_intensity: 0.7
+    smoothness: 0.3
+    event_frequency: 0.08
+
+  cautious:
+    accel_mean: -0.05
+    accel_std: 0.15
+    accel_max: 0.3
+    brake_intensity: 0.25
+    turn_intensity: 0.2
+    smoothness: 0.95
+    event_frequency: 0.01
+
+  erratic:
+    accel_mean: 0.0
+    accel_std: 0.5
+    accel_max: 0.8
+    brake_intensity: 0.7
+    turn_intensity: 0.6
+    smoothness: 0.2
+    event_frequency: 0.12
+
+  smooth:
+    accel_mean: 0.0
+    accel_std: 0.2
+    accel_max: 0.4
+    brake_intensity: 0.3
+    turn_intensity: 0.25
+    smoothness: 0.98
+    event_frequency: 0.005
